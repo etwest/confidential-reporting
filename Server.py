@@ -79,8 +79,9 @@ CSP = {
   ],
 }
 
-talisman = Talisman(app, content_security_policy= CSP,
-  content_security_policy_nonce_in=['script-src'],
+talisman = Talisman(app, 
+  content_security_policy = CSP,
+  content_security_policy_nonce_in = ['script-src'],
   feature_policy={
     'geolocation': '\'none\'',
   })

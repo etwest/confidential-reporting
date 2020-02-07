@@ -20,12 +20,12 @@ You will need a throw-away email address which the server will use to send email
 #### Security Concerns
 The web-app password is stored in plaintext on the server so it is not recommended to use this email for any other purpose other than sending the encrypted reports. If anyone gets access to this gmail account they should only have access to encrypted reports.
 ### Recaptcha
-`www.google.com/recaptcha` to setup a recaptcha for the reporting service. You will need to copy the site and secret keys to `Server.py`. We currently use V3 to prevent bot activity and attacks. This code may need to be tuned for your uses(within the `/report` endpoint in `Server.py`). One potential improvement would be to fall back upon recaptcha v2 in the case the user's recaptcha score is too low. Additionally if you are concerned about google tracking activity on your site switching over to v2 completely may be a better choice.
+www.google.com/recaptcha to setup a recaptcha for the reporting service. You will need to copy the site and secret keys to `Server.py`. We currently use V3 to prevent bot activity and attacks. This code may need to be tuned for your uses(within the `/report` endpoint in `Server.py`). One potential improvement would be to fall back upon recaptcha v2 in the case the user's recaptcha score is too low. Additionally if you are concerned about google tracking activity on your site switching over to v2 completely may be a better choice.
 
 ## Hosting and Installation
-You will need root privileges for these steps.
+You will need root privileges for these steps. You can deploy to Heroku or host yourself by following the instructions in the appropriate section below.
 ### Heroku
-Copy the contents of the `heroku` directory to the project directory. This directory and the `self-hosting` directory are no longer necessary. Create a heroku web app and upload your project to the repository(instructions provided on your heroku app under deploy). http://heroku.com
+Copy the contents of the `heroku` directory to the project directory. This directory and the `self-hosting` directory are no longer necessary for a heroku deployment. Create a heroku web app and upload your project to the repository(instructions provided on your heroku app under deploy). http://heroku.com
 ### Self-Hosting
 Copy the contents of the `self-hosting` directory to the project directory. This directory and the `heroku` directory are no longer necessary.
 #### Dependencies
@@ -79,8 +79,8 @@ Run the following command as root
 Then press 2 to redirect all requests to HTTPS.
 
 #### Sources for These Instructions
-https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
-https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
+- https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
+- https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
 
 ## Testing
-You may test the server on your local machine by running `./Server` this will startup a flask instance running on port 5000. This instance will use the self-signed certificates found in the certs folder to perform HTTPS encryption. This implementation is very limited and should not be used in production.
+You may test the server on your local machine by running `./Server` within the virtual environment. This will startup a flask instance running on port 5000 which you can access at `https://localhost:5000/`. This instance will use the self-signed certificates found in the certs folder to perform HTTPS encryption. This implementation is very limited and should not be used in production.

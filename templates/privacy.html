@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Privacy Policy and Technology for Reports{% endblock %}
+{% block header %}
+<link rel="stylesheet" type="text/css" href="static/css/sammy.css"/>
+{% endblock %}
+
+{% block content %}
+<h1>How We Ensure Privacy</h1>
+<p>First it's important to admit that perfect security and privacy are myths. That disclaimer out of the way this page will try to give you an idea of how we ensure that reports made to use are kept confidential.</p>
+<p>We protect the reports submitted here in the following ways. We don't collect any identifying information like ip address. The only info we see is what you type so you may remain anonymous by simply not including identifying information. Additionally, when you submit a report an encryption algorithm is run on your computer to prevent that data from being read by anyone other than us. This means that the server hosting this service never sees unencypted data. The encrypted message is then sent to our proton mail account which has a unique key to unlock your protected data. The report is only reveal once we open that email.</p>
+<p>Information on openPGP, the algorithm we use to encypt reports, can be found <a href="http://www.openpgp.org/">here</a>.</p>
+<p>Finally, you can view the public key we use for encrypting your report <a href="/key">here</a>.</p>
+{% endblock %}

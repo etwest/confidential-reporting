@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Reporting Page - Example{% endblock %}
+
+{% block header %}
+<script src="/static/javascript/openpgp/openpgp.js" ></script>
+<link rel="stylesheet" type="text/css" href="/static/css/report.css"  />
+<link rel="stylesheet" type="text/css" href="/static/css/sammy.css"  />
+<script type="text/javascript" src="static/javascript/drop_down.js"></script>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="/static/javascript/submit.js" site_key="{{site_key}}" pubKey="{{pubKey}}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Reporting</h1>
+<p>Below you can make a report of inappropriate conduct. Please provide as much detail as you're comfortable with to allow us to identify the type of allegation. If you'd like to be anonymous then we would suggest that you avoid personally identifiable information. Thank you for taking this step to protect your community.</p>
+<form id="form">
+  <div class="row">
+    <div class="col-xs-12 entry-holder">
+      Name of Individual Being Reported:<br>
+      <input id="name_reported" type="text" maxlength="50" required><br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 entry-holder">
+      Please Describe the Inappropriate Conduct:<br>
+      <textarea id="report_text" rows="4" onkeyup="textAreaAdjust(this)" style="overflow:hidden" maxlength="15000" required></textarea>
+      <br>
+    </div>
+  </div>
+  <br>
+  <p>We want the results and reports to hold as much weight as possible. So we are encouraging folks to leave any sort of contact information. If you're comfortable providing answers to any of these optional questions that would be very helpful.</p>
+  <div id="cf2" class="shadow">
+    <img class="bottom" src="/static/icons/chevron-down.svg"/>
+    <img class="top transparent" src="/static/icons/chevron-up.svg"/>
+  </div>
+  <div id="optional" class="hiding">
+    <div class="row">
+      <div class="col-xs-12 entry-holder">
+        Your name:<br>
+        <input id="reporter" type="text" maxlength="100"><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 entry-holder">
+        An Email Address, phone number, or other contact information:<br>
+        <input id="contact" type="text" maxlength="100"><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 button-holder">
+      <div class="ajax-button" id="submit-button">
+        <div id=done class="hide fa fa-check done"></div>
+        <div id=failed class="hide fa fa-close failed"></div>
+        <input id="submit" class="submit" type="submit" value="Submit">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="done_msg" class="hide col-xs-12 text-holder">
+      Thank you for submitting your report.<br>
+      If you'd like you may refresh the page to submit another.<br>
+      Consider reading the <a href="/resources">resources</a> page if you want to learn about resources available on campus.
+    </div>
+    <div id="fail_msg" class="hide col-xs-12 text-holder">
+      Oops, something went wrong. Please refresh the page and try again.
+    </div>
+    <div id="send_msg"class="hide col-xs-12 text-holder">
+      Submitting report...
+    </div>
+    <div id="encrypt_msg" class="hide col-xs-12 text-holder">
+      Encrypting report...
+    </div>
+</form>
+{% endblock %}

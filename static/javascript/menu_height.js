@@ -11,8 +11,7 @@ $( window ).on('load',
     }
   }
 )
-// console.log("hi");
-// console.log($(".menu-elem").eq(3));
+
 $(".menu-elem").eq(3).resize(function(e){console.log("hello")});
 $( window ).resize(
   function(e){

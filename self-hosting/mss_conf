@@ -1,0 +1,19 @@
+server {
+	listen 443 ssl;
+	server_name 'localhost';
+	ssl_certificate '/path/to/ssl/certificate';
+	ssl_certificate_key '/path/to/key';
+	location / {
+		include proxy_params;
+		proxy_pass 'path/to/socket/created/by/gunicorn';
+	}
+}
+
+server {
+	listen 80;
+	server_name 'localhost';
+	location / {
+		return 301 https://$host$request_uri;
+	}
+}
+	

@@ -1,0 +1,23 @@
+#picture{
+  background: url("/static/images/Wharf.jpg"); /*This image is licenced under creative commons from wikicommons https://upload.wikimedia.org/wikipedia/commons/c/c6/Wharf_on_a_Sunset_-_Santa_Cruz_%2815666563218%29.jpg */
+  height: 500px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top -75px left 0px;
+  background-size: cover;
+
+}
+#title{
+  position: fixed;
+  z-index: 0;
+  top: -10;
+  right: 0;
+  color: white !important;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+         0px 8px 13px rgba(0,0,0,0.1),
+         0px 18px 23px rgba(0,0,0,0.1);
+}
+p.c0{
+  font-weight: 900;
+  text-align: center;
+}

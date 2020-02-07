@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve the reporting server
+After=network.target
+
+[Service]
+User='username'
+Group=www-data
+WorkingDirectory='/path/to/server/dir'
+Environment="PATH='/path/to/server/dir/'serverenv/bin/"
+ExecStart='/path/to/server/dir/'serverenv/bin/gunicorn -w 3 -b unix:report-server.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

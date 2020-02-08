@@ -127,12 +127,12 @@ def insert():
     data={'secret':secret_key, 'response':flask_request.form["token"]})
   recaptcha_check = response.json()
 
-  # if recaptcha_check['success'] == False:
-  #   print(str(time) + ": Failed recaptcha success, dropping report")
-  #   raise InvalidReport("failed recaptcha success", HTTP_PRECONDITION_FAILED)
-  # elif recaptcha_check["score"] <= 0.6:
-  #   print(str(time) + ": Failed recaptcha with score of " + str(recaptcha_check["score"]) + ", dropping report")
-  #   raise InvalidReport("failed recaptcha score", HTTP_PRECONDITION_FAILED)
+  if recaptcha_check['success'] == False:
+    print(str(time) + ": Failed recaptcha success, dropping report")
+    raise InvalidReport("failed recaptcha success", HTTP_PRECONDITION_FAILED)
+  elif recaptcha_check["score"] <= 0.6:
+    print(str(time) + ": Failed recaptcha with score of " + str(recaptcha_check["score"]) + ", dropping report")
+    raise InvalidReport("failed recaptcha score", HTTP_PRECONDITION_FAILED)
 
   # Code for sending the email
   # TODO: make subjects sequential

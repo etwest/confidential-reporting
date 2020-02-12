@@ -2,10 +2,10 @@
 This was a pet project I developed while working concurrently as part of a student activist group confronting sexual and racial harassment of students by faculty members. It was born primarily of frustration and a desire to do something. Ultimately the project was not deployed and the activism was successful. It is here on my github in the case that someone else would like to use it.
 
 ### Example Deployment
-An example of this project can be found at https://reporting-example.herokuapp.com/report. After submitting example reports you can view the encrypted result by opening the web console.
+An example of this project can be found at https://reporting-example.herokuapp.com/. After submitting example reports you can view the encrypted result by opening the web console.
 
 ### Contributors
-I would like to thank Matthew Gray for his contributions to this project including html/css frameworks, and javascript hacking. I would also like to thank Gianna Passalacqua for assembling this list of resources I used as an example in this project. Thank you to both of them for their emotional support during this project.
+I would like to thank Matthew Gray for his contributions to this project including html/css frameworks, and javascript hacking. I would also like to thank Gianna Passalacqua for assembling the list of resources I used as an example in this project. Thank you to both of them for their emotional support.
 
 # Setup
 This section will tell you how to setup a reporting server of your own. This code is intended to be adapted into an existing webpage. The files which are most important to the purpose of reporting are `templates\report.html`, `static\javascript\submit.js`, `Server.py`(the `\report` endpoint), and the openpgp files. The other files serve as a framework for designing a webpage and as an example.

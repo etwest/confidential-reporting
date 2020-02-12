@@ -1,4 +1,4 @@
-openpgp.initWorker({ path:'/static/javascript/openpgp/openpgp.worker.js' }) // set the relative web worker path
+openpgp.initWorker({ path:'/static/javascript/openpgp/openpgp.worker.min.js' }) // set the relative web worker path
 
 // pull data from the 'arguments' to this script
 // this is how we establish the recaptcha key and the encryption key
@@ -18,7 +18,7 @@ $( "#form" ).submit(async function( event ) {
     data += "\n" + $("#contact").val();
   }
   // Add the report text to the end of the email
-  data += "\n" + $("#text").val();
+  data += "\n" + $("#report_text").val();
   var recaptcha_token = "";
   grecaptcha.ready(function() {
     grecaptcha.execute(site_key,

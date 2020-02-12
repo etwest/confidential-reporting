@@ -61,7 +61,7 @@ Copy the source code into your project directory
 Deactivate the virtual environment by running deactivate
 
 #### Server Service
-Follow the instructions for the configuration files found in `config_files/README.md`
+Follow the instructions for the configuration files found in `conf-README.md`
 ##### Gunicorn
 Copy the `report.service file` to `/etc/systemd/system/report.service`. To start the service run `systemctl start report` and to start the service on every machine start run `systemctl enable report`. The current state of the server and some log output can be accessed using the systemctl status command.
 
